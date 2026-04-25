@@ -1,0 +1,226 @@
+{
+  "output_dir": "data/processed",
+  "sources": [
+    {
+      "id": "posgrados",
+      "category": "posgrados",
+      "url": "https://pascualbravo.edu.co/posgrados/",
+      "type": "accordion",
+      "save": false,
+      "item_type": "faq",
+      "selectors": {
+        "title": "h1",
+        "subtitle": "h2",
+        "item": ".pp-accordion-item",
+        "question": ".pp-accordion-tab-title",
+        "answer": ".pp-accordion-tab-content",
+        "link": "a"
+      }
+    },
+    {
+      "id": "posgrados_programas",
+      "category": "posgrados",
+      "url": "https://pascualbravo.edu.co/posgrados/",
+      "type": "listing",
+      "save": false,
+      "item_type": "programa",
+      "selectors": {
+        "item": ".jet-listing-grid__item",
+        "title": "h3.jet-listing-dynamic-link .jet-listing-dynamic-link__label",
+        "link": "h3.jet-listing-dynamic-link a"
+      },
+      "extra_fields": {
+        "semesters": ".jet-listing-dynamic-field__content"
+      },
+      "detail": {
+        "enabled": true,
+        "direct_fields": {
+          "program_heading": "h2.wp-block-heading",
+          "program_overview": "div.jet-listing-dynamic-field__content p"
+        },
+        "label_heading_selector": "h4.pp-info-box-title",
+        "label_value_selector": "h5.pp-info-box-subtitle",
+        "label_sections": [
+          {
+            "label": "Título",
+            "field": "program_title"
+          },
+          {
+            "label": "Horario",
+            "field": "schedule"
+          },
+          {
+            "label": "Costo",
+            "field": "cost"
+          },
+          {
+            "label": "N° de créditos",
+            "field": "credits"
+          },
+          {
+            "label": "Código SNIES",
+            "field": "snies"
+          },
+          {
+            "label": "Registro Calificado",
+            "field": "registro_calificado"
+          },
+          {
+            "label": "Vigencia",
+            "field": "vigencia"
+          }
+        ]
+      }
+    },
+    {
+      "id": "doctorado_ciencia_tecnologia",
+      "category": "posgrados",
+      "url": "https://pascualbravo.edu.co/programas/doctorado-en-ciencia-y-tecnologia/",
+      "type": "detail",
+      "save": false,
+      "fields": {
+        "carrera": "h1",
+        "modalidad": ".programa__modalidad",
+        "duracion": ".programa__duracion",
+        "creditos": ".programa__creditos",
+        "snies": ".programa__snies",
+        "registro_calificado": ".programa__registro",
+        "perfil": ".programa__perfil",
+        "costo": ".programa__costo"
+      }
+    },
+    {
+      "id": "pregrados",
+      "category": "pregrados",
+      "url": "https://pascualbravo.edu.co/pregrados/",
+      "type": "grouped_listing",
+      "grouping": {
+        "heading_tag": "h3",
+        "heading_class": "elementor-heading-title"
+      },
+      "selectors": {
+        "item": ".bdt-interactive-card-content",
+        "title": ".bdt-interactive-card-title span",
+        "summary": ".bdt-interactive-card-description",
+        "link": ".bdt-interactive-card-readmore"
+      },
+      "extra_fields": {
+        "modalidad": ".bdt-interactive-card-sub-title"
+      },
+      "detail": {
+        "enabled": true,
+        "presentation_heading": "Presentación del programa",
+        "presentation_selector": ".elementor-text-editor",
+        "sections": {
+          "target_audience": {
+            "heading": "Para quien va dirigido",
+            "selector": ".elementor-text-editor"
+          }
+        },
+        "label_heading_selector": "h4.elementor-heading-title",
+        "label_value_selector": ".elementor-text-editor",
+        "label_sections": [
+          {
+            "label": "Título",
+            "field": "program_title"
+          },
+          {
+            "label": "Inscripciones",
+            "field": "inscriptions"
+          },
+          {
+            "label": "Inicio de clases",
+            "field": "class_start"
+          }
+        ],
+        "inline_labels": {
+          "selector": "strong",
+          "fields": [
+            {
+              "label": "Vigencia",
+              "field": "vigencia"
+            },
+            {
+              "label": "credit",
+              "field": "creditos"
+            },
+            {
+              "label": "duraci",
+              "field": "duracion"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "inscripciones_requisitos",
+      "category": "inscripciones",
+      "type": "static_text",
+      "url": "https://pascualbravo.edu.co/inscripciones/#requisitos",
+      "title": "Requisitos de Inscripción para Aspirantes",
+      "content": "## ASPIRANTE POR PRIMERA VEZ\n\n**Formulario de inscripción:** Del 2 de marzo hasta el 15 de junio del 2026.\n\n### Requisitos:\n\n**Anexar en PDF:**\n- Acreditar condición de bachiller, diploma o acta de grado (si es extranjero debe estar apostillado).\n- Adjuntar constancia de los resultados de las pruebas de Estado (ICFES saber 11). (Ley 1324 del 13 de julio del 2009 artículo 7).\n- Documento de identidad por ambos lados legibles en una sola hoja, (si es extranjero debe anexar visa o pasaporte).\n- Última factura de servicios públicos, con ambos lados legibles, donde se pueda visualizar el estrato.\n- Certificado de la categoría del SISBÉN.\n\n**RECUERDE QUE TENER SISBEN ES DE CARÁCTER OBLIGATORIO PARA QUE SU INSCRIPCIÓN SEA VÁLIDA.**\n\n**Anexar en formato JPG:**\n- Foto reciente a color 3x4, fondo blanco **tipo documento**, Resolución mínima de 200 dpi; el archivo debe estar guardado con el número de la cédula sin puntos, ni guiones o espacios. Por ejemplo: 50478351.jpg\n\n### Nota importante:\n\nDe acuerdo a los documentos exigidos por la institución, si no sube la documentación completa y la foto exacta al formulario, su inscripción no podrá entrar al proceso de selección y admisión (tener en cuenta que el formulario se debe diligenciar completo, sin salirse de la página, si lo hace debe iniciar nuevamente su proceso de inscripción).\n\nRes. 471 del 23 de julio 2015 cap. 2, art 3. **El pago por inscripción no será reembolsable.**\n\nEl listado de admitidos se publicará en la página web institucional www.pascualbravo.edu.co el día 24 de junio del 2026.\n\nActualizado el 25 de febrero del 2026."
+    },
+    {
+      "id": "inscripciones",
+      "category": "inscripciones",
+      "type": "pdf_text",
+      "url": "https://sicau.pascualbravo.edu.co/SICAU/Aspirante/General/InstruccionesDeInicioDeInscripcion",
+      "path": "data/InstructivoInscripcionAspirantes.pdf",
+      "title": "Instructivo Inscripcion Aspirantes"
+    },
+    {
+      "id": "precios",
+      "category": "precios",
+      "type": "table_page",
+      "url": "https://pascualbravo.edu.co/ayuda/derechos-pecunarios/",
+      "tables": [
+        {
+          "id": "bdt-table-01cb23c",
+          "name": "Estratos y valor SMMLV",
+          "selector": "#bdt-table-01cb23c table"
+        },
+        {
+          "id": "bdt-table-c636e7a",
+          "name": "Derechos pecuniarios - Matriculas pregrados",
+          "selector": "#bdt-table-c636e7a table"
+        },
+        {
+          "id": "bdt-table-87a37d5",
+          "name": "Derechos pecuniarios - Matriculas posgrados",
+          "selector": "#bdt-table-87a37d5 table"
+        },
+        {
+          "id": "bdt-table-2de9e8f",
+          "name": "Derechos pecuniarios - Otros valores",
+          "selector": "#bdt-table-2de9e8f table"
+        }
+      ]
+    },
+    {
+      "id": "calendario",
+      "category": "calendario",
+      "type": "calendar_page",
+      "url": "https://pascualbravo.edu.co/calendario-academico-2026-1/",
+      "tables": [
+        {
+          "id": "calendario-academico",
+          "name": "Calendario Académico",
+          "selector": ".pp-table-container table.pp-table"
+        }
+      ]
+    }
+  ],
+  "merge_outputs": [
+    {
+      "output": "posgrados.json",
+      "sources": [
+        "posgrados",
+        "posgrados_programas"
+      ],
+      "grouped": {
+        "faq": "preguntas",
+        "programa": "programas"
+      }
+    }
+  ]
+}
